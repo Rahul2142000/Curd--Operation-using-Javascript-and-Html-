@@ -202,10 +202,11 @@ document.querySelector(".valid9").style.display="none"
 // edit validation
 
 function editvalidateForm(){
-
+ var editerror = true
   var salutation = document.getElementById('Salutationedit').value
     if(salutation=""){
      document.getElementById('Salutationedit').style.border= "1px solid red";
+     editerror = false
     }
     else{
      document.getElementById('Salutationedit').style.border= "1px solid green";
@@ -222,6 +223,7 @@ function editvalidateForm(){
    else{ 
      document.getElementById("fnameedit").style.border= "1px solid red";
      document.querySelector(".valid").style.display="block"
+     editerror = false
      // return false;
    }
  // ==============================================================
@@ -237,6 +239,7 @@ function editvalidateForm(){
      document.getElementById("lnameedit").style.border= "1px solid red";
      document.getElementById("lnameedit").focus;
      document.querySelector(".valid1").style.display="block"
+     editerror = false
     
      // return false;
  
@@ -247,6 +250,7 @@ function editvalidateForm(){
         document.getElementById("birthdayedit").style.border= "1px solid red";
         document.getElementById("birthdayedit").focus;
         document.querySelector(".valid4").style.display="block"
+        editerror = false
        
        //  return false;
  
@@ -266,6 +270,7 @@ function editvalidateForm(){
      document.getElementById("Qualificationsedit").style.border= "1px solid red";
      document.getElementById("Qualificationsedit").focus;
      document.querySelector(".valid5").style.display="block"
+     editerror = false
      // return false;
  
    }
@@ -280,6 +285,7 @@ function editvalidateForm(){
      document.getElementById("emailedit").style.border= "1px solid red";
      document.getElementById("emailedit").focus;
      document.querySelector(".valid2").style.display="block"
+     editerror = false
      // return false;
  
    }
@@ -294,6 +300,7 @@ function editvalidateForm(){
      document.getElementById("mobileedit").style.border= "1px solid red";
      document.getElementById("mobileedit").focus;
      document.querySelector(".valid3").style.display="block"
+     editerror = false
      // return false;
  
    }
@@ -303,6 +310,7 @@ function editvalidateForm(){
     document.getElementById("Usernameedit").style.border= "1px solid red";
     document.getElementById("Usernameedit").focus;
     document.querySelector(".valid9").style.display="block"
+    editerror = false
    //  return false;
  
  }
@@ -316,6 +324,7 @@ function editvalidateForm(){
         document.getElementById("inputPasswordedit").style.border= "1px solid red";
         document.getElementById("inputPasswordedit").focus;
         document.querySelector(".valid10").style.display="block"
+        editerror = false
        //  return false;
  
    }
@@ -334,6 +343,7 @@ function editvalidateForm(){
      document.getElementById("Addressedit").style.border= "1px solid red";
      document.querySelector(".valid6").style.display="block"
      document.getElementById("Addressedit").focus;
+     editerror = false
      // return false;
  
    }
@@ -343,6 +353,7 @@ function editvalidateForm(){
         document.getElementById("cityidedit").style.border= "1px solid red";
         document.getElementById("cityidedit").focus;
         document.querySelector(".valid7").style.display="block"
+        editerror = false
        //  return false;
  
    }
@@ -362,6 +373,7 @@ function editvalidateForm(){
      document.getElementById("inputpinzipedit").style.border= "1px solid red";
      document.querySelector(".valid8").style.display="block"
      document.getElementById("inputpinzipedit").focus;
+     editerror = false
      // return false;
  
    }
@@ -371,6 +383,7 @@ function editvalidateForm(){
    var country= document.getElementById ('countryidedit').value
    if(country=''){
      document.getElementById("countryidedit").style.border= "1px solid red";
+     editerror = false
    }
    else{
      document.getElementById("countryidedit").style.border= "1px solid green";
@@ -381,9 +394,17 @@ function editvalidateForm(){
    var stat= document.getElementById ('inputStateedit').value
    if(stat=''){
      document.getElementById("inputStateedit").style.border= "1px solid red";
+     editerror = false
    }
    else{
      document.getElementById("inputStateedit").style.border= "1px solid green";
+   }
+
+   if(editerror=true){
+    return true
+   }
+   else{
+    return false
    }
  }
  

@@ -50,7 +50,7 @@ function fetchemp() {
           </span>
       </button>
       <ul class="dropdown-menu" aria-labelledby="dropdownMenuOffset ">
-          <li><a class="dropdown-item " href="http://127.0.0.1:5500/Sample.html?id=${id}" onclick="detailsEmployee('${id}'); "><span
+          <li><a class="dropdown-item " href="http://127.0.0.1:5501/Sample.html?id=${id}" onclick="detailsEmployee('${id}'); "><span
                       class="material-symbols-outlined edit">
                       visibility
                   </span>View Details</a></li>
@@ -296,7 +296,7 @@ form.addEventListener('submit', function (e) {
     pinzip: pinzip
   }
 
-  console.log('0000000000000000000000');
+  
 
   console.log(server);
 
@@ -487,22 +487,26 @@ function delsucess(){
 
 
 
-function editsucess(){
+// function editsucess(){
   
-  document.getElementById("soman").style.display = "block";
- document.getElementById( "editmodal-body").style.display = "none";
+//   document.getElementById("edit-sucess").style.display = "block";
+//  document.getElementById( "editmodal-body").style.display = "none";
  
-  document.getElementById("soman-edit").addEventListener("click", function() {
-    
-    document.getElementById("soman").style.display = "none";
-    location.reload();
-});
+  
+// });
             
+// }
+
+function editpopup(){
+  document.getElementById("edit-sucess").style.display="block"
+  // document.getElementById( "editmodal-body").style.display = "none";
+   setTimeout(function(){
+  document.getElementById("edit-sucess").style.display = "none";
+  
+} ,1000)
+
+
 }
-
-
-
-
 
 
 

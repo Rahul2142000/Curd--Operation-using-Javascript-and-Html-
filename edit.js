@@ -50,21 +50,21 @@ function edit(id){
 
             document.getElementById("Qualificationsedit").value=data.qualifications;
             document.getElementById("Usernameedit").value=data.username;
-             document.getElementById("inputPasswordedit").value=data.password5;
-             console.log()
+             document.getElementById("inputPasswordedit").value=data.password;
             document.getElementById("Addressedit").value=data.address;
             document.getElementById("countryidedit").value=data.country;
             document.getElementById("inputStateedit").value=data.state;
             document.getElementById("cityidedit").value=data.city;
-            document.getElementById("inputpinzipedit").value=data.pinzip;
+            document.getElementById("inputpinzipedit").value=data.pinzip
+            
        })
         
        var editform=document.getElementById("conform_edit_emp")
        editform.addEventListener('click',(e)=>{
         
          e.preventDefault();
-
          editvalidateForm()
+
          var birthday = document.getElementById('birthdayedit').value;
          var dob = changeformat(birthday);
         
@@ -111,7 +111,7 @@ function edit(id){
       body:JSON.stringify(editemp)
       
   })
-  editsucess()
+    
 
 //   try {
 
