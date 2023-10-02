@@ -21,6 +21,8 @@
 fetchemp()
 function fetchemp() {
   const table = document.getElementById("tableEmployee");
+  var rows = Array.from(table.rows)
+  rows.reverse();
   table.innerHTML = "";
   fetch("http://localhost:3000/employees")
     .then((res) => res.json())
@@ -28,6 +30,7 @@ function fetchemp() {
       console.log(employees);
       var count = 1;
       employees.forEach(data => {
+        
         var id = data.id;
 
         table.innerHTML += `
