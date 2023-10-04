@@ -648,6 +648,16 @@ label{
     font-size: 12px;
     padding: 0;
 }
+.valid11{
+    position: absolute;
+    display: none;
+   
+}
+.valid11 p{
+    color: red;
+    font-size: 12px;
+    padding: 0;
+}
 
 
 /* successPopup */

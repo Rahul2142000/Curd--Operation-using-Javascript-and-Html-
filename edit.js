@@ -113,60 +113,40 @@ function edit(id){
       
   }) 
 
-  if(editvalidateForm()){
-    alert()
-  }
 
- 
-  
+    // Use await to wait for the fetch request to complete
+      fetch(`http://localhost:3000/employees/${id}`, {
+        method: 'PUT',
+        headers: {
+            'content-type': 'application/json',
+        },
+        body: JSON.stringify(editemp),
+    });
+    const fileUpload = document.getElementById("file-input-EDIT");
     
-
-//   try {
-
-//     // Use await to wait for the fetch request to complete
-//     const response = await fetch(`http://localhost:3000/employees/${id}`, {
-//         method: 'PUT',
-//         headers: {
-//             'content-type': 'application/json',
-//         },
-//         body: JSON.stringify(editemp),
-//     });
-//     const fileUpload = document.getElementById("file-input-EDIT");
+    const forData = new FormData();
     
-//     const formData = new FormData();
+    forData.append("avatar", fileUpload.files[0]);
     
-//     formData.append("avatars", fileUpload.files[0]);
+    console.log(id,"idddd");
     
-//     console.log(id,"idddd");
-//     alert(id)
-//     fetch(`http://localhost:3000/employees/${id}/avatars`, {
-//         method: 'POST',
-//         body: formData,
-//     })
+    fetch(`http://localhost:3000/employees/${id}/avatar`, {
+        method: 'POST',
+        body: forData,
+    })
+    console.log(forData,"formdata")
+    // alert(forData,"fordata")
     
-//     // edit employee update image 
+    // edit employee update image 
 
-
-//     if (!response.ok) {
-//         throw new Error('Error updating employee data');
-//     }
-
-
-//     const data = await response.json();
-    
-//     console.log(data);
-//     alert( data,"jhdhfh")
-   
-
-// }
-// catch (error) {
-//     console.error(error);
-// }
-
-     });
   
      
+})
 }
+
+
+
+
 
 
 function editimage() {
@@ -189,4 +169,5 @@ document.getElementById('file-input-EDIT').addEventListener('change', function (
       // Read the selected image file as a data URL and display it
       reader.readAsDataURL(fileInput.files[0]);
   }
-});
+})
+

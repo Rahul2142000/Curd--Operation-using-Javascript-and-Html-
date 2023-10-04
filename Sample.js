@@ -21,8 +21,7 @@
 fetchemp()
 function fetchemp() {
   const table = document.getElementById("tableEmployee");
-  var rows = Array.from(table.rows)
-  rows.reverse();
+  
   table.innerHTML = "";
   fetch("http://localhost:3000/employees")
     .then((res) => res.json())
@@ -340,7 +339,6 @@ function image_Upload(data) {
     body: formData,
   }).then((res) => {
     console.log(res);
-
   }).catch((error) => {
     console.log(error, "Error message");
   });

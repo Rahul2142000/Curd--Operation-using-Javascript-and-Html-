@@ -10,6 +10,21 @@ function validateForm(){
    }
 
   // ==============================================
+  var maleRadio = document.querySelector('input[name="gender"][value="Male"]');
+  var femaleRadio = document.querySelector('input[name="gender"][value="Female"]');
+  
+  if (!maleRadio.checked && !femaleRadio.checked) {
+    document.querySelector(".valid11").style.display="block"
+    hasError=false;
+  }
+     
+  else{
+    document.querySelector(".valid11").style.display="none"
+   
+  }
+  
+  
+  // =============================
 
   var fnamevalidation = document.getElementById("fname").value;
   var fsnamevalidation = (/^[A-Za-z]/);
